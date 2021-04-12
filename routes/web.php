@@ -42,3 +42,7 @@ Route::get('admin/ajaxadmin/dataBuku/{id}', [BookController::class, 'getDataBuku
 Route::delete('admin/books/delete', [BookController::class, 'destroy'])
           ->name('admin.book.delete')
           ->middleware('is_admin');
+
+Route::get('admin/print_books', [BookController::class, 'print_books'])
+        ->name('admin.print.books')
+        ->middleware('is_admin');
