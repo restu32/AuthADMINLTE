@@ -46,3 +46,11 @@ Route::delete('admin/books/delete', [BookController::class, 'destroy'])
 Route::get('admin/print_books', [BookController::class, 'print_books'])
         ->name('admin.print.books')
         ->middleware('is_admin');
+
+Route::get('admin/books/export', [AdminController::class, 'export'])
+        ->name('admin.book.export')
+        ->middleware('is_admin');
+
+Route::post('admin/books/import', [AdminController::class, 'import'])
+        ->name('admin.book.import')
+        ->middleware('is_admin');
